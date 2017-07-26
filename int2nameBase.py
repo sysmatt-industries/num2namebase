@@ -3,7 +3,12 @@
 from NameBaseConverter import NameBaseConverter
 import sys
 
-nameConv = NameBaseConverter()
+try:
+    nameLength=int(sys.argv[2])
+except: 
+    nameLength=4
+
+nameConv = NameBaseConverter(nameLength)
 print "{0}".format(nameConv.encode(int(sys.argv[1])))
 
 
