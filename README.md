@@ -48,6 +48,17 @@ Neda$Otha$Brad$Else$Jeri
 kory=robt=eden=neal=todd
 tara,lynn,fran,sang,viva
 
+$ ./randomNameBasePassword.py  --verbose --names 5
+     args.bits[40]
+    args.names[5]
+       myDelim[-]
+        myCase[upper]
+passwdBitsFrom[1099511627776]
+  passwdBitsTo[2199023255551]
+     myRandInt[1805799705936]
+AIMEE-LAYNE-BORIS-BENNY-DONYA
+
+
 $ ./randomNameBasePassword.py --quantity 5 --case --delim --bits 20
 ZORA-ELLA-JACK
 ZANE+GWEN+BARB
