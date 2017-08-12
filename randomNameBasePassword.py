@@ -15,7 +15,7 @@ argsParser.add_argument("-v", "--verbose", help="Enable Verbose Messages", actio
 argsParser.add_argument("-c", "--case", help="Enable name case randomization", action="store_true")
 argsParser.add_argument("-d", "--delim", help="Enable delimiter randomization", action="store_true")
 argsParser.add_argument("-b", "--bits", help="Specify number of bits in password to be generated, default={0}".format(defaultBits), type=int, default=defaultBits)
-argsParser.add_argument("-n", "--names", help="Specify name set to use by letter count, default={0}".format(defaultNameSet), type=int, default=defaultNameSet, choices=[3,4,5])
+argsParser.add_argument("-n", "--names", help="Specify name set to use by letter count, default={0}".format(defaultNameSet), type=int, default=defaultNameSet, choices=[3,4,5,34,35,45,345])
 argsParser.add_argument("-q", "--quantity", help="Specify quantity of passwords to generate, default=1", type=int, default=1)
 args=argsParser.parse_args()
 
@@ -43,6 +43,8 @@ for q in range(0,args.quantity):
 
     nameConv = NameBaseConverter(args.names,delim=myDelim)
     nameOut = nameConv.encode(myRandInt)
+    if args.verbose:
+        print " nameBaseCount[{0}]".format(len(nameConv.NAME_BASE_DIGITS))
     if myCase == "upper":
         nameOut=nameOut.upper()
     elif myCase == "lower":
