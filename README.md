@@ -3,6 +3,8 @@
 
 
 (tested on python 2.6+) 
+
+```
 cd /tmp
 git clone https://github.com/sysmatt-industries/num2namebase.git
 
@@ -60,6 +62,8 @@ ZANE^DANE^LONI^PETE^EMIL^KALA^HERB^ELZA^YONG^GALE^MISS
 JADE.RINA.NEAL.OMER.NANA.GENA.KAYE.ZULA.EVIE.REID.COLE
 Jade,Dino,Bell,Andy,Nery,Drew,Eliz,Lura,Risa,Zane,Tyra
 
+```
+
 For instance:
 
 "Your password is a series of names, all lower case, separated by commas, tara lynn with two "n"s fran sang viva"
@@ -69,9 +73,11 @@ For instance:
 
 Internally, this is using a class i wrote that converts integers into numeric bases generated from english names
 
+```
 $ ./int2nameBase.py 82479384792
 BURT-YUKO-LUIS-TRAN-ROMA
 
 $ ./nameBase2int.py BURT-YUKO-LUIS-TRAN-ROMA
 82479384792
+```
 
