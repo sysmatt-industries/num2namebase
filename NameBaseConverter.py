@@ -442,14 +442,22 @@ class NameBaseConverter(object):
         BUDAK YARDE REMER MENTZ LADAY TOBIN FINKS COONE MAGEN PAPEN 
     """).split())
 
-    def __init__(self,nameSet=4,delim="-"):
+    def __init__(self,nameSet=4,delim="-",namesFile=None):
         self.NAME_DELIM=delim
-        if "3" in str(nameSet):
-            self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS3
-        if "4" in str(nameSet):
-            self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS4
-        if "5" in str(nameSet):
-            self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS5
+        if namesFile:
+            try:
+                with open(namesFile, 'r') as nf:
+                    fileData = str(nf.read())
+                    self.NAME_BASE_DIGITS = tuple(fileData.split())
+            except IOError:
+                print "Could not read file:", namesFile
+        else:
+            if "3" in str(nameSet):
+                self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS3
+            if "4" in str(nameSet):
+                self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS4
+            if "5" in str(nameSet):
+                self.NAME_BASE_DIGITS = self.NAME_BASE_DIGITS + self.NAME_BASE_DIGITS5
         if not self.NAME_BASE_DIGITS:
             raise ValueError("nameSet must be a combination of 3, 4 or 5 only")
         return
